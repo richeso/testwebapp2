@@ -47,6 +47,23 @@ echo `git clean -df`
 echo `git checkout -- .`
 echo `git pull`
 cd $curpath
+
+if [ ! -d "./mysql/db" ]; then
+   mkdir -p ./mysql/db
+fi
+
+
+if [ ! -d "./tomcat/logs" ]; then
+   mkdir -p ./tomcat/logs
+fi
+
+
+if [ ! -d "./tomcat/webapps" ]; then
+   mkdir -p ./tomcat/webapps
+fi
+
+chmod 775 -R *
+
 ant -f replace_localhost.xml -Ddbhost=mysqldb -Dwebhost=mycoreos1 -Dwebport=8080
 cd $rootdir/$project/
 gradle -Dorg.gradle.java.home=$JDK_PATH build war
