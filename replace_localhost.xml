@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="replacelocalhost" basedir="." default="ALL">
+  <!-- Start of Property Parameters -->
+  
+  <property name="jspdir" value="./testwebapp2/WebContent"/>
+  <property name="metadir" value="./testwebapp2/WebContent/META-INF"/>
+
+  <property name="webhost" value="xx"/>
+  <property name="dbhost"  value="xx"/>
+  <property name="webport" value="8080"/>
+
+  <target name="ALL">
+	 <replaceregexp byline="false" flags="g"
+	   match="localhost:8080" 
+	   replace="${webhost}:${webport}"> 
+	   <fileset dir="${jspdir}" includes ="*.jsp"/>
+  	</replaceregexp> 
+  	 <replaceregexp byline="false" flags="g"
+		   match="localhost:8082" 
+		   replace="${webhost}:${webport}"> 
+		   <fileset dir="${jspdir}" includes ="*.jsp"/>
+  	</replaceregexp> 
+  	<replaceregexp byline="false" flags="g"
+		   match="localhost:3306" 
+		   replace="${dbhost}:3306"> 
+		   <fileset dir="${metadir}" includes ="*.xml"/>
+  	</replaceregexp> 
+</target>
+
+</project>

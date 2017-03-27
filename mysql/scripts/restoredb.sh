@@ -1,0 +1,1 @@
+mysql -uroot -ppassword persondb < /tmp/scripts/persondb.sql
