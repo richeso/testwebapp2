@@ -83,8 +83,8 @@ $(document)
             $("#contacts")
                     .jqGrid(
                             {   editable: true,
-                                url : 'http://mycoreos1:8080/testwebapp/rest/service',
-                                editurl : "http://mycoreos1:8080/testwebapp/rest/controller",
+                                url : 'http://localhost:8080/testwebapp/rest/service',
+                                editurl : "http://localhost:8080/testwebapp/rest/controller",
                                 datatype : 'json',
                                 colNames : [ 'id', 'name', 'Last Name',
                                         'address'],
