@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <sql:query var="rs" dataSource="jdbc/persondb">
-select * from person
+select * from Person
 </sql:query>
 
 <html>
@@ -11,7 +11,7 @@ select * from person
   </head>
   <body>
 
-<h2>Jndi test results -  select * from person</h2>
+<h2>Jndi test results -  select * from Person</h2>
 
 <table border="1">
 <tr align="left">
