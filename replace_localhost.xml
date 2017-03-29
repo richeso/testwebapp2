@@ -4,6 +4,7 @@
   
   <property name="jspdir" value="./testwebapp2/WebContent"/>
   <property name="metadir" value="./testwebapp2/WebContent/META-INF"/>
+  <property name="metadir2" value="./testwebapp2/WebContent/WEB-INF/classes/META-INF"/>
 
   <property name="webhost" value="xx"/>
   <property name="dbhost"  value="xx"/>
@@ -24,6 +25,11 @@
 		   match="localhost:3306" 
 		   replace="${dbhost}:3306"> 
 		   <fileset dir="${metadir}" includes ="*.xml"/>
+  	</replaceregexp> 
+  	<replaceregexp byline="false" flags="g"
+		   match="localhost:3306" 
+		   replace="${dbhost}:3306"> 
+		   <fileset dir="${metadir2}" includes ="*.xml"/>
   	</replaceregexp> 
 </target>
 
