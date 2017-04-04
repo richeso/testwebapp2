@@ -4,7 +4,7 @@
   
   <property name="jspdir" value="./testwebapp2/WebContent"/>
   <property name="metadir" value="./testwebapp2/WebContent/META-INF"/>
-  <property name="metadir2" value="./testwebapp2/WebContent/WEB-INF/classes/META-INF"/>
+  <property name="metadir2" value="./testwebapp2/src/META-INF"/>
 
   <property name="webhost" value="xx"/>
   <property name="dbhost"  value="xx"/>

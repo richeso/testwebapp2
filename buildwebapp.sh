@@ -35,7 +35,23 @@ fi
 
 rootdir=$1
 project=$2
-JDK_PATH=$3
+##JDK_PATH=$3
+
+propsfile=./build.properties
+
+## ----------------------------
+## read properties file
+## ----------------------------
+
+if [ -f $propsfile ]; then
+  for line in $(< $propsfile)
+  do
+    case $line in
+     *=*)   eval $line ;; # beware! eval!
+      *) ;;
+     esac
+  done
+fi
 
 curpath=$(pwd)
 echo "current path is: " $curpath
@@ -51,7 +67,6 @@ fi
 echo `git checkout -- $project`
 
 cd $curpath
-
 
 if [ ! -d "./mysql/db" ]; then
    mkdir -p ./mysql/db
@@ -69,7 +84,7 @@ fi
 
 chmod 775 -R *
 
-ant -f replace_localhost.xml -Ddbhost=mysqldb -Dwebhost=mycoreos1 -Dwebport=8080
+ant -f replace_localhost.xml -Ddbhost=mysqldb -Dwebhost=localhost -Dwebport=8080
 cd $rootdir/$project/
 gradle -Dorg.gradle.java.home=$JDK_PATH build war
 cd $curpath
