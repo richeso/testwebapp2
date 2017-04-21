@@ -28,5 +28,7 @@ services:
      - MYSQL_PASSWORD=password
      - MYSQL_ROOT_PASSWORD=password
      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+     - ./mysql/scripts:/tmp/scripts
     command: mysqld --init-file="/tmp/scripts/persondbdump.sql"
  

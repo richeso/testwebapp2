@@ -6,18 +6,18 @@
    <persistence-unit name="primary" transaction-type="RESOURCE_LOCAL">
    <!-- Persistence provider -->
       <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-      <non-jta-data-source>java:/comp/env/jdbc/persondb</non-jta-data-source>
+      <!-- non-jta-data-source>java:/comp/env/jdbc/persondb</non-jta-data-source> -->
         <!-- Entity classes -->
         <class>ca.honda.model.Person</class>
       <properties>
          <!-- Properties for Hibernate -->
           <!-- Configuring JDBC properties or use JNDI by commenting out below -->
-          <!-- 
-         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/persondb" />
+         
+         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://mysqldb:3306/persondb" />
          <property name="javax.persistence.jdbc.user" value="root" />
          <property name="javax.persistence.jdbc.password" value="password" />
          <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-          -->
+      
          <property name="hibernate.hbm2ddl.auto" value="update" />
          <property name="hibernate.show_sql" value="false" />
          <!-- property name="hibernate.connection.autocommit" value="true" /> -->

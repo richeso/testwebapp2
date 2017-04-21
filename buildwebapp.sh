@@ -35,7 +35,7 @@ fi
 
 rootdir=$1
 project=$2
-##JDK_PATH=$3
+JDK_PATH=$3
 
 propsfile=./build.properties
 
@@ -64,7 +64,12 @@ if [  -d "$rootdir/$project" ]; then
    rm -rf $rootdir/$project
 fi
 
-echo `git checkout -- $project`
+##echo `git checkout -- $project`
+echo "git clean -df | git checkout --.  |  git pull "
+echo `git clean -df`
+echo `git checkout -- .`
+echo `git pull`   	   
+echo " --> Finished Git fetch and rebase"
 
 cd $curpath
 
@@ -84,7 +89,7 @@ fi
 
 chmod 775 -R *
 
-ant -f replace_localhost.xml -Ddbhost=mysqldb -Dwebhost=localhost -Dwebport=8080
+ant -f replace_localhost.xml -Ddbhost=mysqldb -Dwebhost=mycoreos1 -Dwebport=8080
 cd $rootdir/$project/
 gradle -Dorg.gradle.java.home=$JDK_PATH build war
 cd $curpath
