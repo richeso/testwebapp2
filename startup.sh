@@ -15,6 +15,6 @@ if [ ! -d "./tomcat/webapps" ]; then
    mkdir -p ./tomcat/webapps
 fi
 
-./buildwebapp.sh . testwebapp2 "/c/pg/java/jdk1.7.0_80"
+./buildwebapp.sh . testwebapp2 "/usr/lib/jvm/default-java"
 
 docker-compose up -d
