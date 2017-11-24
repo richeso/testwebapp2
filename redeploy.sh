@@ -22,7 +22,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
     # Do something under 32 bits Windows NT platform
     echo ">>> Running under Windows -  MINGw32: "
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then 
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
     echo ">>> Running under WIndows - MINGW64: "
 fi
 
@@ -39,8 +39,11 @@ docker stop mysqldb
 docker rm mytomcat
 docker rm mysqldb
 docker rmi testwebapp2_db
-docker-compose up -d
 
-sleep 10
+docker-compose up -d mysqldb
+sleep 30
+docker-compose up -d mytomcat
+
+sleep 30
 ## Start testwebapp
-curl -u tomcat:password http://localhost:8080/manager/text/start?path=/testwebapp 
+curl -u tomcat:password http://localhost:8080/manager/text/start?path=/testwebapp

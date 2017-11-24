@@ -16,6 +16,7 @@ services:
      - ./tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
      - ./tomcat/webapps/testwebapp.war:/usr/local/tomcat/webapps/testwebapp.war
      - ./tomcat/logs:/usr/local/tomcat/logs
+    - ./tomcat/webapps/conf/context.xml:/usr/local/tomcat/webapps/manager/META-INF/context.xml
 
   db:
     build: ./mysql
