@@ -40,9 +40,9 @@ docker rm mytomcat
 docker rm mysqldb
 docker rmi testwebapp2_db
 
-docker-compose up -d mysqldb
+docker-compose up -d db
 sleep 30
-docker-compose up -d mytomcat
+docker-compose up -d web
 
 sleep 30
 ## Start testwebapp

@@ -17,9 +17,9 @@ fi
 
 ./buildwebapp.sh . testwebapp2 "/usr/lib/jvm/default-java"
 
-docker-compose up -d mysqldb
+docker-compose up -d db
 sleep 30
-docker-compose up -d mytomcat
+docker-compose up -d web
 sleep 60
 
 curl -u tomcat:password http://localhost:8080/manager/text/start?path=/testwebapp
