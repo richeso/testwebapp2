@@ -15,9 +15,9 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<Context antiResourceLocking="false" privileged="true" >
-    <!--
-    <Valve className="org.apache.catalina.valves.RemoteAddrValve"
-         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
-    -->
-</Context>
+<jaspic-providers xmlns="http://tomcat.apache.org/xml"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://tomcat.apache.org/xml jaspic-providers.xsd"
+                  version="1.0">
+  <!-- No JASPIC providers configured by default -->
+</jaspic-providers>

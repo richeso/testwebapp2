@@ -1,6 +1,5 @@
 #!/bin/bash
 
-.
 if [ ! -d "./mysql/db" ]; then
    mkdir -p ./mysql/db
 fi
