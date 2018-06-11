@@ -2,7 +2,7 @@ version: '2'
 services:
 
   web:
-    image: tomcat:7
+    image: tomcat:8.5
     container_name: mytomcat
     ports:
      - "8080:8080"

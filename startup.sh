@@ -14,11 +14,6 @@ if [ ! -d "./tomcat/webapps" ]; then
    mkdir -p ./tomcat/webapps
 fi
 
-add-apt-repository ppa:openjdk-r/ppa
-apt-get update
-apt-get install openjdk-7-jdk
-update-java-alternatives -s java-1.7.0-openjdk-amd64
-
 ./buildwebapp.sh . testwebapp2 "/usr/lib/jvm/default-java"
 
 docker-compose up -d db
